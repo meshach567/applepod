@@ -1,6 +1,6 @@
 // pages/sign-in/[[...sign-in]].tsx
 import { GetStaticPaths } from 'next';
-import { SignUp } from '@clerk/nextjs';
+import { SignIn } from '@clerk/nextjs';
 
 // Define getStaticPaths to generate static paths
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const Page = () => {
   return (
     <div className="flex-center glassmorphism-auth h-screen w-full">
-      <SignUp />
+      <SignIn />
     </div>
   );
 };
