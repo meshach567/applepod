@@ -8,13 +8,14 @@ import PodcastCard from "@/components/PodcastCard";
 import ProfileCard from "@/components/ProfileCard";
 import { api } from "@/convex/_generated/api";
 
-const ProfilePage = ({
+
+function ProfilePage({
   params,
 }: {
   params: {
     profileId: string;
   };
-}) => {
+}) {
   const user = useQuery(api.users.getUserById, {
     clerkId: params.profileId,
   });
@@ -31,7 +32,7 @@ const ProfilePage = ({
       </h1>
       <div className="mt-6 flex flex-col gap-6 max-md:items-center md:flex-row">
         <ProfileCard
-          podcastData={podcastsData!}
+          podcastData={podcastsData! as any}
           imageUrl={user?.imageUrl!}
           userFirstName={user?.name!}
         />
@@ -62,6 +63,6 @@ const ProfilePage = ({
       </section>
     </section>
   );
-};
+}
 
 export default ProfilePage;
