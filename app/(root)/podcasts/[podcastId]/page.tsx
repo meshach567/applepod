@@ -11,7 +11,7 @@ import { useQuery } from 'convex/react'
 import Image from 'next/image'
 import React from 'react'
 
-const PodcastDetails = ({ params: { podcastId } }: { params: { podcastId: Id<'podcasts'> } }) => {
+export const PodcastDetails = async ({ params: { podcastId } }: { params: { podcastId: Id<'podcasts'> } }) => {
   const { user } = useUser();
 
   const podcast = useQuery(api.podcasts.getPodcastById, { podcastId })
