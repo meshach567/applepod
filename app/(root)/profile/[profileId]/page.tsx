@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-async-client-component */
 "use client";
 
 import { useQuery } from "convex/react";
@@ -7,18 +8,20 @@ import LoaderSpinner from "@/components/LoaderSpinner";
 import PodcastCard from "@/components/PodcastCard";
 import ProfileCard from "@/components/ProfileCard";
 import { api } from "@/convex/_generated/api";
+import { ConvexHttpClient } from "convex/browser";
 
-export const ProfilePage = async ({
+export default async function ProfilePage({
   params,
 }: {
   params: {
     profileId: string;
   };
-}) => {
-  const user = useQuery(api.users.getUserById, {
+}) {
+  const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+  const user = await client.query(api.users.getUserById, {
     clerkId: params.profileId,
   });
-  const podcastsData = useQuery(api.podcasts.getPodcastByAuthorId, {
+  const podcastsData = await client.query(api.podcasts.getPodcastByAuthorId, {
     authorId: params.profileId,
   });
 
@@ -62,6 +65,5 @@ export const ProfilePage = async ({
       </section>
     </section>
   );
-};
+}
 
-export default ProfilePage;
