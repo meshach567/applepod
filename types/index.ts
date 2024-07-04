@@ -32,7 +32,7 @@ export interface PodcastProps {
   user: Id<"users">;
   podcastTitle: string;
   podcastDescription: string;
-  audioUrl: string | null;
+  audioUrl?: string;
   imageUrl: string | null;
   imageStorageId: Id<"_storage"> | null;
   author: string;
@@ -73,14 +73,14 @@ export interface LatestPodcastCardProps {
   title: string;
   duration: string;
   index: number;
-  audioUrl: string;
+  audioUrl?: string;
   author: string;
   views: number;
   podcastId: Id<"podcasts">;
 }
 
 export interface PodcastDetailPlayerProps {
-  audioUrl: string;
+  audioUrl: string | any;
   podcastTitle: string;
   author: string;
   isOwner: boolean;
@@ -94,7 +94,7 @@ export interface PodcastDetailPlayerProps {
 
 export interface AudioProps {
   title: string;
-  audioUrl: string;
+  audioUrl?: string;
   author: string;
   imageUrl: string;
   podcastId: string;
