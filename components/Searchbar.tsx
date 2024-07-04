@@ -29,7 +29,7 @@ const Searchbar = () => {
         onLoad={() => setSearch('')}
       />
       <Image 
-        src="/icons/search.svg"
+        src="/apple/icons/search.svg"
         alt="search"
         height={20}
         width={20}

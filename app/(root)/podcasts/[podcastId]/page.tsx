@@ -30,7 +30,7 @@ export const PodcastDetails = async ({ params: { podcastId } }: { params: { podc
         </h1>
         <figure className="flex gap-3">
           <Image
-            src="/icons/headphone.svg"
+            src="/apple/icons/headphone.svg"
             width={24}
             height={24}
             alt="headphone"

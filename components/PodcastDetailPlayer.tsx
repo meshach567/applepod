@@ -62,7 +62,7 @@ const PodcastDetailPlayer = ({
     <div className="mt-6 flex w-full justify-between max-md:justify-center">
       <div className="flex flex-col gap-8 max-md:items-center md:flex-row">
         <Image
-          src={imageUrl}
+          src={`/apple${imageUrl}`}
           width={250}
           height={250}
           alt="Podcast image"
@@ -80,7 +80,7 @@ const PodcastDetailPlayer = ({
               }}
             >
               <Image
-                src={authorImageUrl}
+                src={`/apple${authorImageUrl}`}
                 width={30}
                 height={30}
                 alt="Caster icon"
@@ -95,7 +95,7 @@ const PodcastDetailPlayer = ({
             className="text-16 w-full max-w-[250px] bg-orange-1 font-extrabold text-white-1"
           >
             <Image
-              src="/icons/Play.svg"
+              src="/apple/icons/Play.svg"
               width={20}
               height={20}
               alt="random play"
@@ -107,7 +107,7 @@ const PodcastDetailPlayer = ({
       {isOwner && (
         <div className="relative mt-2">
           <Image
-            src="/icons/three-dots.svg"
+            src="/apple/icons/three-dots.svg"
             width={20}
             height={30}
             alt="Three dots icon"
@@ -120,7 +120,7 @@ const PodcastDetailPlayer = ({
               onClick={handleDelete}
             >
               <Image
-                src="/icons/delete.svg"
+                src="/apple/icons/delete.svg"
                 width={16}
                 height={16}
                 alt="Delete icon"

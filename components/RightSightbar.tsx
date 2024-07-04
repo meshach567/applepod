@@ -25,12 +25,12 @@ const RightSidebar = () => {
       'h-[calc(100vh-140px)]': audio?.audioUrl
     })}>
       <SignedIn>
-        <Link href={`/profile/${user?.id}`} className="flex gap-3 pb-12">
+        <Link href={`/apple/profile/${user?.id}`} className="flex gap-3 pb-12">
           <UserButton />
           <div className="flex w-full items-center justify-between">
             <h1 className="text-16 truncate font-semibold text-white-1">{user?.firstName} {user?.lastName}</h1>
             <Image 
-              src="/icons/right-arrow.svg"
+              src="/apple/icons/right-arrow.svg"
               alt="arrow"
               width={24}
               height={24}
@@ -49,7 +49,7 @@ const RightSidebar = () => {
             <div key={podcaster._id} className="flex cursor-pointer justify-between" onClick={() => router.push(`/profile/${podcaster.clerkId}`)}>
               <figure className="flex items-center gap-2">
                 <Image
-                  src={podcaster.imageUrl}
+                  src={`apple${podcaster.imageUrl}`}
                   alt={podcaster.name}
                   width={44}
                   height={44}
