@@ -134,7 +134,7 @@ const GenerateThumbnail = ({ setImage, setImageStorageId, image, imagePrompt, se
             onChange={(e) => uploadImage(e)}
           />
           {!isImageLoading ? (
-            <Image src="/icons/upload-image.svg" width={40} height={40} alt="upload" />
+            <Image src="/apple/icons/upload-image.svg" width={40} height={40} alt="upload" />
           ): (
             <div className="text-16 flex-center font-medium text-white-1">
               Uploading
@@ -152,7 +152,7 @@ const GenerateThumbnail = ({ setImage, setImageStorageId, image, imagePrompt, se
       {image && (
         <div className="flex-center w-full">
           <Image 
-            src={image}
+            src={`/apple${image}`}
             width={200}
             height={200}
             className="mt-5"
