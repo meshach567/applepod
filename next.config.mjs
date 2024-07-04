@@ -4,7 +4,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  runtime: 'edge',
   images: {
     remotePatterns: [
       {
